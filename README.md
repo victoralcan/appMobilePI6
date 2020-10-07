@@ -9,3 +9,7 @@ Para esse projeto, utilizamos _yarn_ como gerenciador de dependências
 ### Como rodar o back end 
 
 Para iniciar o back-end da aplicação, entre na basta _backend_ e rode yarn install. Após a instalação, utilize o comando "dev:server" para iniciar o backend na porta 3333.
+
+### Como rodar o front end
+
+Para iniciar o front end, instale o _npx_ globalmente via npm com o comando "npm install -g npx". Depois, para iniciar o front end, é variável em cada sistema operacional. Entre no link https://react-native.rocketseat.dev/ e selecione o seu sistema operacional. Siga os passos nas instruções
