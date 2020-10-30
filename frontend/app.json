@@ -1,0 +1,12 @@
+{
+  "name": "nossa-ead-frontend",
+  "displayName": "nossa-ead-frontend",
+  "expo": {
+    "name": "nossa-ead-frontend",
+    "slug": "nossa-ead-frontend",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
