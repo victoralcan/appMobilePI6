@@ -6,16 +6,21 @@ import { Ionicons, SimpleLineIcons, AntDesign, MaterialCommunityIcons } from '@e
 import colors from './styles/colors';
 
 import Home from './pages/Home';
+import Disciplinas from './pages/Disciplinas';
+import Atividades from './pages/Atividades';
+import Notas from './pages/Notas';
+import Pessoas from './pages/Pessoas';
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
 const Routes: React.FC = () => (
+    
   <NavigationContainer>
     <Navigator
         tabBarOptions={{
-            style: {
-                height: 60,
-                backgroundColor: colors.white,
+            style: { 
+                height: 70,
+                backgroundColor: colors.gray,
                 borderTopWidth: 0,
 
             },
@@ -48,7 +53,7 @@ const Routes: React.FC = () => (
               )
           }
       }}/>
-      <Screen name="Disciplinas" component={View} options={{
+      <Screen name="Disciplinas" component={Disciplinas} options={{
           tabBarIcon: ({ size, focused }) => {
               return (
                   <SimpleLineIcons
@@ -59,7 +64,7 @@ const Routes: React.FC = () => (
               )
           }
       }}/>
-      <Screen name="Atividades" component={View} options={{
+      <Screen name="Atividades" component={Atividades} options={{
           tabBarIcon: ({ size, focused }) => {
               return (
                   <AntDesign
@@ -70,7 +75,7 @@ const Routes: React.FC = () => (
               )
           }
       }}/>
-      <Screen name="Notas" component={View} options={{
+      <Screen name="Notas" component={Notas} options={{
           tabBarIcon: ({ size, focused }) => {
               return (
                   <MaterialCommunityIcons
@@ -81,7 +86,7 @@ const Routes: React.FC = () => (
               )
           }
       }}/>
-      <Screen name="Pessoas" component={View} options={{
+      <Screen name="Pessoas" component={Pessoas} options={{
           tabBarIcon: ({ size, focused }) => {
               return (
                   <SimpleLineIcons
