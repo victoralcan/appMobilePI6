@@ -13,12 +13,17 @@ export const Wrapper = styled.SafeAreaView`
 `;
 
 export const Container = styled.View`
-    background-color: ${colors.gray};
+    background-color: ${colors.back};
     padding-left: 14px;
-    ;
+    
 
 `;
 
 export const Main = styled.View`
-    background-color: ${colors.back};
 `;
+
+export const Back = styled.View`
+    
+    background: ${colors.gray};
+`;
+

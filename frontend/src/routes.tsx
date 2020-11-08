@@ -20,7 +20,7 @@ const Routes: React.FC = () => (
         tabBarOptions={{
             style: { 
                 height: 70,
-                backgroundColor: colors.gray,
+                backgroundColor: colors.back,
                 borderTopWidth: 0,
 
             },
@@ -39,7 +39,7 @@ const Routes: React.FC = () => (
                 marginTop: 8,
             },
             inactiveTintColor: colors.black,
-            activeTintColor: colors.primary
+            activeTintColor: colors.white
         }}
     >
       <Screen name="Home" component={Home} options={{
@@ -48,7 +48,7 @@ const Routes: React.FC = () => (
                   <AntDesign
                     name="home"
                     size={size}
-                    color={focused ? colors.primary : colors.black}
+                    color={focused ? colors.white : colors.black}
                   />
               )
           }
@@ -59,7 +59,7 @@ const Routes: React.FC = () => (
                   <SimpleLineIcons
                     name="graduation"
                     size={size}
-                    color={focused ? colors.primary : colors.black}
+                    color={focused ? colors.white : colors.black}
                   />
               )
           }
@@ -70,7 +70,7 @@ const Routes: React.FC = () => (
                   <AntDesign
                     name="edit"
                     size={size}
-                    color={focused ? colors.primary : colors.black}
+                    color={focused ? colors.white : colors.black}
                   />
               )
           }
@@ -81,7 +81,7 @@ const Routes: React.FC = () => (
                   <MaterialCommunityIcons
                     name="format-annotation-plus"
                     size={size}
-                    color={focused ? colors.primary : colors.black}
+                    color={focused ? colors.white : colors.black}
                   />
               )
           }
@@ -92,7 +92,7 @@ const Routes: React.FC = () => (
                   <SimpleLineIcons
                     name="people"
                     size={size}
-                    color={focused ? colors.primary : colors.black}
+                    color={focused ? colors.white : colors.black}
                   />
               )
           }
