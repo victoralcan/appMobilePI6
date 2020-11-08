@@ -8,7 +8,7 @@ const Home: React.FC = () => {
     <Wrapper>
       <Container>
         <Header />
-        <Main />
+          <Main />
       </Container>
     </Wrapper>
   );

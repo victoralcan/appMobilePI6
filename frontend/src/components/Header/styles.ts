@@ -8,6 +8,8 @@ export const Container = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  background-color: #c0c0c0;
+  border-radius: 3px;
 `;
 
 export const Avatar = styled.TouchableOpacity`

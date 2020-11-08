@@ -13,7 +13,7 @@ export const Wrapper = styled.SafeAreaView`
 `;
 
 export const Container = styled.View`
-    margin-top: 6px;
+    background-color: ${colors.gray};
     padding-left: 14px;
     
 

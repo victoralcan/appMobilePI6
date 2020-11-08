@@ -9,4 +9,5 @@ export default {
     purple: '#bf94ff',
     white: '#FFFFFF',
     secundaryWhite: '#d0d0d0',
+    back: '#38A8B8'
   };
