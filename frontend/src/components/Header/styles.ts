@@ -3,13 +3,12 @@ import styled from 'styled-components/native';
 import colors from '../../styles/colors';
 
 export const Container = styled.View`
-  padding-top: 14px;
+  padding-top: 35px;
   padding-right: 14px;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: #38A8B8;
-  border-radius: 3px;
+  background-color: ${colors.back} ;
   color: ${colors.white}
 `;
 
@@ -18,7 +17,7 @@ export const Avatar = styled.TouchableOpacity`
   width: 32px;
   height: 32px;
   border-radius: 16px;
-  padding-botton: 14px;
+  
 `;
 
 export const RightSide = styled.View`
@@ -33,6 +32,6 @@ export const Button = styled.TouchableOpacity`
 `;
 
 export const AppName = styled.Text`
-    font-weight: bold;]
+    font-weight: bold;
     color: ${colors.white}
 `
