@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { AntDesign, MaterialCommunityIcons, SimpleLineIcons } from '@expo/vector-icons';
+import { connect } from 'react-redux';
 import colors from './styles/colors';
 
 import Home from './pages/Home';
@@ -11,24 +12,30 @@ import Atividades from './pages/Atividades';
 import Notas from './pages/Notas';
 import Pessoas from './pages/Pessoas';
 import Login from './pages/Login';
+import { IRootState } from "./shared/reducers";
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
 const Stack = createStackNavigator();
 
-const Routes: React.FC = () => (
+interface IRouterProps extends StateProps, DispatchProps {
+}
+
+const Routes: (props: IRouterProps) => JSX.Element = (props: IRouterProps) => (
 
   <NavigationContainer>
     <Stack.Navigator
       headerMode='none'>
-      <Stack.Screen
-        name="Login"
-        component={Login}
-      />
-      <Stack.Screen
-        name="LoggedIn"
-        component={LoggedRoutes}
-      />
+      {props.isAuthenticated ?
+        <Stack.Screen
+          name="LoggedIn"
+          component={LoggedRoutes}
+        />
+        :
+        <Stack.Screen
+          name="Login"
+          component={Login}
+        />}
     </Stack.Navigator>
   </NavigationContainer>
 );
@@ -118,4 +125,16 @@ const LoggedRoutes: React.FC = () => (
   </Navigator>
 );
 
-export default Routes;
+const mapStateToProps = ({ authentication }: IRootState) => ({
+  isAuthenticated: authentication.isAuthenticated
+});
+
+const mapDispatchToProps = {};
+
+type StateProps = ReturnType<typeof mapStateToProps>;
+type DispatchProps = typeof mapDispatchToProps;
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Routes);

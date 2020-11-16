@@ -1,9 +1,14 @@
 import React from 'react';
 import { Button, Text } from 'react-native';
 import * as Google from 'expo-google-app-auth';
+import { connect } from 'react-redux';
 import { Container } from './styles';
+import { setLoggedIn } from '../../shared/reducers/authentication';
 
-const Login: React.FC = () => {
+interface ILoginProps extends StateProps, DispatchProps {
+}
+
+const Login: (props: ILoginProps) => JSX.Element = (props: ILoginProps) => {
   const config = {
     androidClientId: "802976640146-rgue20kdeju6vu3i1tqrjj19074tsir7.apps.googleusercontent.com",
     scopes: ["https://www.googleapis.com/auth/classroom.courses"]
@@ -13,6 +18,7 @@ const Login: React.FC = () => {
     const { type, accessToken, user } = await Google.logInAsync(config);
     if (type === 'success') {
       console.log('logado');
+      props.setLoggedIn(accessToken);
       console.log(accessToken);
       console.log(user);
     } else {
@@ -27,4 +33,14 @@ const Login: React.FC = () => {
   );
 };
 
-export default Login;
+const mapStateToProps = () => ({});
+
+const mapDispatchToProps = { setLoggedIn };
+
+type StateProps = ReturnType<typeof mapStateToProps>;
+type DispatchProps = typeof mapDispatchToProps;
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Login);

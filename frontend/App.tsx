@@ -7,7 +7,8 @@ import {
   Roboto_700Bold,
   useFonts,
 } from '@expo-google-fonts/roboto';
-
+import { Provider } from 'react-redux';
+import initStore from './src/config/store';
 import Routes from './src/routes';
 
 export default function App() {
@@ -21,10 +22,14 @@ export default function App() {
     return <AppLoading />;
   }
 
+  const store = initStore();
+
   return (
     <>
-      <Routes />
-      <StatusBar style="light" />
+      <Provider store={store}>
+        <Routes />
+        <StatusBar style="light" />
+      </Provider>
     </>
   );
 }
