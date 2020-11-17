@@ -11,16 +11,14 @@ interface ILoginProps extends StateProps, DispatchProps {
 const Login: (props: ILoginProps) => JSX.Element = (props: ILoginProps) => {
   const config = {
     androidClientId: "802976640146-rgue20kdeju6vu3i1tqrjj19074tsir7.apps.googleusercontent.com",
-    scopes: ["https://www.googleapis.com/auth/classroom.courses"]
+    scopes: ["https://www.googleapis.com/auth/classroom.courses", "https://www.googleapis.com/auth/classroom.courses.readonly"]
   };
   const loginUser = async () => {
     // @ts-ignore
     const { type, accessToken, user } = await Google.logInAsync(config);
     if (type === 'success') {
       console.log('logado');
-      props.setLoggedIn(accessToken);
-      console.log(accessToken);
-      console.log(user);
+      props.setLoggedIn(accessToken, user);
     } else {
       console.log("deu ruim");
     }

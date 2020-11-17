@@ -1,3 +1,5 @@
+import { User } from "@react-native-community/google-signin";
+
 export const ACTION_TYPES = {
   LOGIN: 'authentication/LOGIN',
   LOGOUT: 'authentication/LOGOUT',
@@ -6,7 +8,8 @@ export const ACTION_TYPES = {
 
 const initialState = {
   isAuthenticated: false,
-  userToken: null
+  userToken: '',
+  user: {} as User
 };
 
 export type AuthenticationState = Readonly<typeof initialState>;
@@ -19,7 +22,8 @@ export default (state: AuthenticationState = initialState, action): Authenticati
       return {
         ...state,
         isAuthenticated: true,
-        userToken: action.payload
+        userToken: action.payload.token,
+        user: action.payload.user
       };
     case ACTION_TYPES.LOGOUT:
       return {
@@ -34,10 +38,10 @@ export default (state: AuthenticationState = initialState, action): Authenticati
   }
 };
 
-export const setLoggedIn = (token: string) => async (dispatch, _) => {
+export const setLoggedIn = (token: string, user: User) => async (dispatch, _) => {
   await dispatch({
     type: ACTION_TYPES.LOGIN,
-    payload: token
+    payload: { token, user }
   });
 };
 
