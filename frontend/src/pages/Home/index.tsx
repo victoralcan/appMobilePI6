@@ -7,6 +7,7 @@ import { IRootState } from "../../shared/reducers";
 import { fetchCourses } from '../../shared/reducers/course.reducer';
 
 import { FlatList, StyleSheet, Text } from 'react-native';
+import { CourseState } from "../../shared/models/course.model";
 
 const styles = StyleSheet.create({
   container: {
@@ -26,7 +27,7 @@ interface IHomeProps extends StateProps, DispatchProps {
 const Home: (props: IHomeProps) => JSX.Element = (props: IHomeProps) => {
   const { token, courses, fetchSuccess } = props;
   useEffect(() => {
-    props.fetchCourses(token);
+    props.fetchCourses(token, CourseState.ACTIVE);
   }, []);
   return (
     <>

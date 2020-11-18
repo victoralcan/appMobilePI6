@@ -20,12 +20,12 @@ export default interface ICourse {
 }
 
 export enum CourseState {
-  COURSE_STATE_UNSPECIFIED,
-  ACTIVE,
-  ARCHIVED,
-  PROVISIONED,
-  DECLINED,
-  SUSPENDED
+  COURSE_STATE_UNSPECIFIED = 'COURSE_STATE_UNSPECIFIED',
+  ACTIVE = 'ACTIVE',
+  ARCHIVED = 'ARCHIVED',
+  PROVISIONED = 'PROVISIONED',
+  DECLINED = 'DECLINED',
+  SUSPENDED = 'SUSPENDED'
 }
 
 export interface CourseMaterialSet {

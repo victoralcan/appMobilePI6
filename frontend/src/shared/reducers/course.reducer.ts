@@ -1,4 +1,4 @@
-import ICourse from "../models/course.model";
+import ICourse, { CourseState } from "../models/course.model";
 import { FAILURE, REQUEST, SUCCESS } from "./action-type.util";
 import axios from 'axios';
 
@@ -47,10 +47,11 @@ export default (state: CoursesState = initialState, action): CoursesState => {
 
 // Actions
 
-export const fetchCourses = (token: string) => async (dispatch, _) => {
+export const fetchCourses = (token: string, courseState?: CourseState) => async (dispatch, _) => {
+  const requestUrl = 'https://classroom.googleapis.com/v1/courses?';
   const result = await dispatch({
     type: ACTION_TYPES.FETCH_COURSES,
-    payload: axios.get('https://classroom.googleapis.com/v1/courses', {
+    payload: axios.get(requestUrl + (courseState ? 'courseStates=' + courseState : ''), {
       headers: {
         Authorization: `Bearer ${token}`
       }
