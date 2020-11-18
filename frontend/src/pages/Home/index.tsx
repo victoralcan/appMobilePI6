@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Container, Main, Back } from '../../styles/loggedGlobalStyle';
+import { Container, Main } from '../../styles/loggedGlobalStyle';
 import { connect } from 'react-redux';
 
 import Header from '../../components/Header'
