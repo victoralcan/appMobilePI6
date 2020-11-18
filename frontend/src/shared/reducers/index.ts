@@ -1,15 +1,21 @@
 import { combineReducers } from 'redux';
-import authentication, { AuthenticationState } from "./authentication";
-import courses, { CoursesState } from "./course.reducer";
+import authentication, { AuthenticationReducerState } from "./authentication";
+import courses, { CourseReducerState } from "./course.reducer";
+import announcement, { AnnouncementReducerState } from './announcement.reducer';
+import courseWork, { CourseWorkReducerState } from "./courseWork.reducer";
 
 export interface IRootState {
-  readonly authentication: AuthenticationState,
-  readonly courses: CoursesState
+  readonly authentication: AuthenticationReducerState,
+  readonly courses: CourseReducerState
+  readonly announcement: AnnouncementReducerState
+  readonly courseWork: CourseWorkReducerState
 }
 
 const rootReducer = combineReducers<IRootState>({
   authentication,
-  courses
+  courses,
+  announcement,
+  courseWork
 });
 
 export default rootReducer;

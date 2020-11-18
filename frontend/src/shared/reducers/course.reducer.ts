@@ -13,11 +13,11 @@ const initialState = {
   fetchSuccess: false
 };
 
-export type CoursesState = Readonly<typeof initialState>;
+export type CourseReducerState = Readonly<typeof initialState>;
 
 // Reducer
 
-export default (state: CoursesState = initialState, action): CoursesState => {
+export default (state: CourseReducerState = initialState, action): CourseReducerState => {
   switch (action.type) {
     case REQUEST(ACTION_TYPES.FETCH_COURSES):
       return {

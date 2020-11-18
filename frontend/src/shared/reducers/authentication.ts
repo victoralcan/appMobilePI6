@@ -12,11 +12,11 @@ const initialState = {
   user: {} as User
 };
 
-export type AuthenticationState = Readonly<typeof initialState>;
+export type AuthenticationReducerState = Readonly<typeof initialState>;
 
 // Reducer
 
-export default (state: AuthenticationState = initialState, action): AuthenticationState => {
+export default (state: AuthenticationReducerState = initialState, action): AuthenticationReducerState => {
   switch (action.type) {
     case ACTION_TYPES.LOGIN:
       return {
