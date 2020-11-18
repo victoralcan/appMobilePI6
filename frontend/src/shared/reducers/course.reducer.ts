@@ -4,11 +4,13 @@ import axios from 'axios';
 
 export const ACTION_TYPES = {
   FETCH_COURSES: 'course/FETCH_COURSES',
+  SELECT_COURSE: 'course/SELECT_COURSE',
   RESET: 'courses/RESET'
 };
 
 const initialState = {
   courses: [] as ReadonlyArray<ICourse>,
+  selectedCourse: {} as Readonly<ICourse>,
   errorMessage: null,
   fetchSuccess: false
 };
@@ -36,6 +38,11 @@ export default (state: CourseReducerState = initialState, action): CourseReducer
         errorMessage: action.payload,
         fetchSuccess: false
       };
+    case ACTION_TYPES.SELECT_COURSE:
+      return {
+        ...state,
+        selectedCourse: action.payload
+      };
     case ACTION_TYPES.RESET:
       return {
         ...initialState
@@ -58,6 +65,11 @@ export const fetchCourses = (token: string, courseState?: CourseState) => async 
     })
   });
 };
+
+export const selectCourse = (course: ICourse) => ({
+  type: ACTION_TYPES.SELECT_COURSE,
+  payload: course
+});
 
 export const reset = () => ({
   type: ACTION_TYPES.RESET
