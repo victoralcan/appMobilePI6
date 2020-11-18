@@ -27,7 +27,7 @@ export default (state: CourseWorkReducerState = initialState, action): CourseWor
     case SUCCESS(ACTION_TYPES.FETCH_COURSE_WORKS):
       return {
         ...state,
-        courseWorks: action.payload.data.announcements,
+        courseWorks: action.payload.data.courseWork,
         fetchSuccess: true
       };
     case FAILURE(ACTION_TYPES.FETCH_COURSE_WORKS):
@@ -47,7 +47,7 @@ export default (state: CourseWorkReducerState = initialState, action): CourseWor
 
 // Actions
 
-export const fetchCourseWorks = (token: string, courseId: number) => async (dispatch, _) => {
+export const fetchCourseWorks = (token: string, courseId: string) => async (dispatch, _) => {
   const requestUrl = `https://classroom.googleapis.com/v1/courses/${courseId}/courseWork`;
   const result = await dispatch({
     type: ACTION_TYPES.FETCH_COURSE_WORKS,

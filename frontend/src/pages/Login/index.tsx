@@ -13,7 +13,8 @@ const Login: (props: ILoginProps) => JSX.Element = (props: ILoginProps) => {
     androidClientId: "802976640146-rgue20kdeju6vu3i1tqrjj19074tsir7.apps.googleusercontent.com",
     scopes: ["https://www.googleapis.com/auth/classroom.courses",
       "https://www.googleapis.com/auth/classroom.coursework.me",
-      "https://www.googleapis.com/auth/classroom.announcements"]
+      "https://www.googleapis.com/auth/classroom.announcements",
+      "https://www.googleapis.com/auth/classroom.rosters.readonly"]
   };
   const loginUser = async () => {
     // @ts-ignore

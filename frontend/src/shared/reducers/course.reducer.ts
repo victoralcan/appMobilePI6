@@ -1,16 +1,18 @@
-import ICourse, { CourseState } from "../models/course.model";
+import ICourse, { CourseState, Student } from "../models/course.model";
 import { FAILURE, REQUEST, SUCCESS } from "./action-type.util";
 import axios from 'axios';
 
 export const ACTION_TYPES = {
   FETCH_COURSES: 'course/FETCH_COURSES',
   SELECT_COURSE: 'course/SELECT_COURSE',
+  FETCH_STUDENTS: 'course/FETCH_STUDENTS',
   RESET: 'courses/RESET'
 };
 
 const initialState = {
   courses: [] as ReadonlyArray<ICourse>,
   selectedCourse: {} as Readonly<ICourse>,
+  students: [] as ReadonlyArray<Student>,
   errorMessage: null,
   fetchSuccess: false
 };
@@ -31,6 +33,11 @@ export default (state: CourseReducerState = initialState, action): CourseReducer
         ...state,
         courses: action.payload.data.courses,
         fetchSuccess: true
+      };
+    case SUCCESS(ACTION_TYPES.FETCH_STUDENTS):
+      return {
+        ...state,
+        students: action.payload.data.students
       };
     case FAILURE(ACTION_TYPES.FETCH_COURSES):
       return {
@@ -59,6 +66,18 @@ export const fetchCourses = (token: string, courseState?: CourseState) => async 
   const result = await dispatch({
     type: ACTION_TYPES.FETCH_COURSES,
     payload: axios.get(requestUrl + (courseState ? 'courseStates=' + courseState : ''), {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+  });
+};
+
+export const fetchStudents = (token: string, courseId?: string) => async (dispatch, _) => {
+  const requestUrl = `https://classroom.googleapis.com/v1/courses/${courseId}/students`;
+  const result = await dispatch({
+    type: ACTION_TYPES.FETCH_STUDENTS,
+    payload: axios.get(requestUrl, {
       headers: {
         Authorization: `Bearer ${token}`
       }

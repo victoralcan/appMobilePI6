@@ -47,7 +47,7 @@ export default (state: AnnouncementReducerState = initialState, action): Announc
 
 // Actions
 
-export const fetchCourses = (token: string, courseId: number) => async (dispatch, _) => {
+export const fetchAnnouncements = (token: string, courseId: string) => async (dispatch, _) => {
   const requestUrl = `https://classroom.googleapis.com/v1/courses/${courseId}/announcements`;
   const result = await dispatch({
     type: ACTION_TYPES.FETCH_ANNOUNCEMENTS,

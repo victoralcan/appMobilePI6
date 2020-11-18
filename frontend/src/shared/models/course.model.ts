@@ -72,3 +72,34 @@ export interface DriveFolder {
   title: string,
   alternateLink: string
 }
+
+export interface Student {
+  courseId: string,
+  userId: string,
+  profile: UserProfile,
+  studentWorkFolder: DriveFolder
+}
+
+export interface UserProfile {
+  id: string,
+  name: Name,
+  emailAddress: string,
+  photoUrl: string,
+  permissions: GlobalPermission[],
+  verifiedTeacher: boolean
+}
+
+export interface Name {
+  givenName: string,
+  familyName: string,
+  fullName: string
+}
+
+export interface GlobalPermission {
+  permission: Permission
+}
+
+export enum Permission {
+  PERMISSION_UNSPECIFIED= 'PERMISSION_UNSPECIFIED',
+  CREATE_COURSE = 'CREATE_COURSE'
+}
