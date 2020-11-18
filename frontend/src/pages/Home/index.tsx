@@ -28,8 +28,6 @@ const Home: (props: IHomeProps) => JSX.Element = (props: IHomeProps) => {
   useEffect(() => {
     props.fetchCourses(token);
   }, []);
-  console.log(courses);
-  console.log(fetchSuccess);
   return (
     <>
       <Container>
@@ -46,8 +44,6 @@ const Home: (props: IHomeProps) => JSX.Element = (props: IHomeProps) => {
             : <Text></Text>}
         </Main>
       </Container>
-      <Back>
-      </Back>
     </>
   );
 };

@@ -45,6 +45,8 @@ export default (state: CoursesState = initialState, action): CoursesState => {
   }
 };
 
+// Actions
+
 export const fetchCourses = (token: string) => async (dispatch, _) => {
   const result = await dispatch({
     type: ACTION_TYPES.FETCH_COURSES,
