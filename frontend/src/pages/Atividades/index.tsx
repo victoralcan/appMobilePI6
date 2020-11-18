@@ -1,16 +1,18 @@
 import React from 'react';
-import { Wrapper, Container, Main } from './styles';
+import { Back, Container, Main } from '../../styles/loggedGlobalStyle';
 
 import Header from '../../components/Header'
 
 const Atividades: React.FC = () => {
   return (
-      <Wrapper>
-        <Container>
-          <Header />
-          <Main />
-        </Container>
-      </Wrapper>
+    <>
+      <Container>
+        <Header/>
+        <Main/>
+      </Container>
+      <Back>
+      </Back>
+    </>
   );
 };
 

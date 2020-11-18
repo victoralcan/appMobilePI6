@@ -1,16 +1,17 @@
 import React from 'react';
-import { Wrapper, Container, Main } from './styles';
-
+import { Back, Container, Main } from '../../styles/loggedGlobalStyle';
 import Header from '../../components/Header'
 
 const Disciplinas: React.FC = () => {
   return (
-    <Wrapper>
+    <>
       <Container>
-        <Header />
-        <Main />
+        <Header/>
+        <Main/>
       </Container>
-    </Wrapper>
+      <Back>
+      </Back>
+    </>
   );
 };
 

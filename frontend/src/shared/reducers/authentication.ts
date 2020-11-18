@@ -45,6 +45,10 @@ export const setLoggedIn = (token: string, user: User) => async (dispatch, _) =>
   });
 };
 
+export const setLoggedOut = () => ({
+  type: ACTION_TYPES.LOGOUT
+});
+
 export const reset = () => ({
   type: ACTION_TYPES.RESET
 });

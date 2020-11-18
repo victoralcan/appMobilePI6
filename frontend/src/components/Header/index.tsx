@@ -1,19 +1,20 @@
 import React from 'react';
 import { Feather, MaterialIcons } from '@expo/vector-icons';
-import { Container, Avatar, RightSide, Button, AppName } from './styles';
+import { AppName, Avatar, Button, Container, RightSide } from './styles';
+import { connect } from 'react-redux';
 
 import colors from '../../styles/colors';
+import { setLoggedOut } from "../../shared/reducers/authentication";
 
-const Header: React.FC = () => {
+interface IHeaderProps extends StateProps, DispatchProps {
+}
+
+const Header: (props: IHeaderProps) => JSX.Element = (props: IHeaderProps) => {
   return (
     <Container>
-      
       <Avatar>
-        
       </Avatar>
-
       <AppName>Nossa EAD</AppName>
-
       <RightSide>
         <Button>
           <MaterialIcons
@@ -22,18 +23,26 @@ const Header: React.FC = () => {
             color={colors.black}
           />
         </Button>
-
-        <Button>
+        <Button onPress={props.setLoggedOut}>
           <Feather
             name="log-out"
             size={26}
             color={colors.black}
           />
         </Button>
-
       </RightSide>
     </Container>
   );
 };
 
-export default Header;
+const mapStateToProps = () => ({});
+
+const mapDispatchToProps = { setLoggedOut };
+
+type StateProps = ReturnType<typeof mapStateToProps>;
+type DispatchProps = typeof mapDispatchToProps;
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Header);
