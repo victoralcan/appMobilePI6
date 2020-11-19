@@ -1,6 +1,6 @@
 import React from 'react';
 import { Feather, MaterialIcons } from '@expo/vector-icons';
-import { AppName, Avatar, Button, Container, RightSide } from './styles';
+import { AppName, Avatar, Button, Container, RightSide, AppNameContainer } from './styles';
 import { connect } from 'react-redux';
 
 import colors from '../../styles/colors';
@@ -14,20 +14,22 @@ const Header: (props: IHeaderProps) => JSX.Element = (props: IHeaderProps) => {
     <Container>
       <Avatar>
       </Avatar>
-      <AppName>Nossa EAD</AppName>
+      <AppNameContainer>
+        <AppName>Nossa EAD</AppName>
+      </AppNameContainer>
       <RightSide>
         <Button>
           <MaterialIcons
             name="notifications-none"
-            size={26}
-            color={colors.black}
+            size={22}
+            color={colors.white}
           />
         </Button>
         <Button onPress={props.setLoggedOut}>
           <Feather
             name="log-out"
-            size={26}
-            color={colors.black}
+            size={22}
+            color={colors.white}
           />
         </Button>
       </RightSide>

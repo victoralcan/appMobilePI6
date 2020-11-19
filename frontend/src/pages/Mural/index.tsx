@@ -7,6 +7,8 @@ import { IRootState } from "../../shared/reducers";
 import { FlatList, StyleSheet, Text } from "react-native";
 import { fetchAnnouncements } from '../../shared/reducers/announcement.reducer';
 
+import { ListItem } from './styles';
+
 const styles = StyleSheet.create({
   item: {
     padding: 10,
@@ -32,7 +34,8 @@ const Mural: (props: IMuralProps) => JSX.Element = (props: IMuralProps) => {
             data={announcements}
             keyExtractor={announcement => announcement.id}
             renderItem={({ item }) => (
-              <Text style={styles.item}>{item.text}</Text>
+              // <Text style={styles.item}>{item.text}</Text>
+            <ListItem>{item.text}</ListItem>
             )}
           />
         </Main>

@@ -9,6 +9,8 @@ import { fetchCourses, selectCourse, reset } from '../../shared/reducers/course.
 import { FlatList, StyleSheet, Text } from 'react-native';
 import { CourseState } from "../../shared/models/course.model";
 
+import { CourseConteiner, CourseSection, CourseName } from './styles';
+
 const styles = StyleSheet.create({
   item: {
     padding: 10,
@@ -32,11 +34,17 @@ const Disciplinas: (props: IDisciplinasProps) => JSX.Element = (props: IDiscipli
         <Header/>
         <Main>
           {fetchSuccess ?
-            <FlatList
+            <FlatList 
               data={courses}
+              // onEndReached={}
+              onEndReachedThreshold={0.1}
               keyExtractor={course => course.id}
               renderItem={({ item }) => (
-                <Text style={styles.item} onPress={() => props.selectCourse(item)}>{item.name}</Text>
+                // <Text style={styles.item} onPress={() => props.selectCourse(item)}>{item.name}</Text>
+                <CourseConteiner onPress={() => props.selectCourse(item)}>
+                  <CourseName numberOfLines={1}>{item.name}</CourseName>
+                  <CourseSection numberOfLines={1}>{item.section}</CourseSection>
+                </CourseConteiner>
               )}
             />
             : <Text></Text>}

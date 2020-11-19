@@ -28,7 +28,7 @@ export default function App() {
     <>
       <Provider store={store}>
         <Routes />
-        <StatusBar style="light" />
+        <StatusBar style="dark" />
       </Provider>
     </>
   );

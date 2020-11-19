@@ -8,8 +8,8 @@ export const Container = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: ${colors.back} ;
-  color: ${colors.white}
+  background-color: ${colors.primary};
+  height: 80px;
 `;
 
 export const Avatar = styled.TouchableOpacity`
@@ -17,13 +17,14 @@ export const Avatar = styled.TouchableOpacity`
   width: 32px;
   height: 32px;
   border-radius: 16px;
-  
+  margin-left: 6px
 `;
 
 export const RightSide = styled.View`
   flex-direction: row;
   align-items: center;
-  color: ${colors.white}
+  color: ${colors.white};
+
 `;
 
 export const Button = styled.TouchableOpacity`
@@ -33,5 +34,12 @@ export const Button = styled.TouchableOpacity`
 
 export const AppName = styled.Text`
     font-weight: bold;
+    font-size: 19px;
     color: ${colors.white}
 `
+
+export const AppNameContainer = styled.View`
+    flex: 1;
+    align-items: flex-start;
+    padding-left: 10px;
+`;

@@ -26,7 +26,7 @@ const Routes: (props: IRouterProps) => JSX.Element = (props: IRouterProps) => {
       tabBarOptions={{
         style: {
           height: 70,
-          backgroundColor: colors.back,
+          backgroundColor: colors.primary,
           borderTopWidth: 0,
 
         },
