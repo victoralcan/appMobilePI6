@@ -1,9 +1,10 @@
 import React from 'react';
-import { Button, Text } from 'react-native';
+import { Button, Text, StyleSheet } from 'react-native';
 import * as Google from 'expo-google-app-auth';
 import { connect } from 'react-redux';
-import { Container } from './styles';
+import { Container, AppTittle, LoginButton, ButtonText } from './styles';
 import { setLoggedIn } from '../../shared/reducers/authentication';
+import { AntDesign } from '@expo/vector-icons';
 
 interface ILoginProps extends StateProps, DispatchProps {
 }
@@ -28,8 +29,13 @@ const Login: (props: ILoginProps) => JSX.Element = (props: ILoginProps) => {
   };
   return (
     <Container>
-      <Text>Login</Text>
-      <Button title="Logar" onPress={loginUser}/>
+      <AppTittle>NOSSA EAD</AppTittle>
+      
+      <LoginButton onPress={loginUser}>
+        <AntDesign name="google" size={24} color="black" />
+        <ButtonText>Login With Google</ButtonText>
+      </LoginButton>
+
     </Container>
   );
 };
