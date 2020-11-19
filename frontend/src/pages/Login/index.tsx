@@ -12,6 +12,7 @@ interface ILoginProps extends StateProps, DispatchProps {
 const Login: (props: ILoginProps) => JSX.Element = (props: ILoginProps) => {
   const config = {
     androidClientId: "802976640146-rgue20kdeju6vu3i1tqrjj19074tsir7.apps.googleusercontent.com",
+    iosClientId: "802976640146-nj7fbl2r2vcf4df3msmb71fm852jiv2k.apps.googleusercontent.com",
     scopes: ["https://www.googleapis.com/auth/classroom.courses",
       "https://www.googleapis.com/auth/classroom.coursework.me",
       "https://www.googleapis.com/auth/classroom.announcements",
