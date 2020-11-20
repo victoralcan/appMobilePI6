@@ -83,10 +83,10 @@ export interface Student {
 export interface UserProfile {
   id: string,
   name: Name,
-  emailAddress: string,
-  photoUrl: string,
+  emailAddress?: string,
+  photoUrl?: string,
   permissions: GlobalPermission[],
-  verifiedTeacher: boolean
+  verifiedTeacher?: boolean
 }
 
 export interface Name {
