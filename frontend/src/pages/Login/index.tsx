@@ -1,8 +1,7 @@
 import React from 'react';
-import { Button, Text, StyleSheet } from 'react-native';
 import * as Google from 'expo-google-app-auth';
 import { connect } from 'react-redux';
-import { Container, AppTittle, LoginButton, ButtonText } from './styles';
+import { AppTittle, ButtonText, Container, LoginButton } from './styles';
 import { setLoggedIn } from '../../shared/reducers/authentication';
 import { AntDesign } from '@expo/vector-icons';
 
@@ -22,18 +21,15 @@ const Login: (props: ILoginProps) => JSX.Element = (props: ILoginProps) => {
     // @ts-ignore
     const { type, accessToken, user } = await Google.logInAsync(config);
     if (type === 'success') {
-      console.log('logado');
       props.setLoggedIn(accessToken, user);
-    } else {
-      console.log("deu ruim");
     }
   };
   return (
     <Container>
       <AppTittle>NOSSA EAD</AppTittle>
-      
+
       <LoginButton onPress={loginUser}>
-        <AntDesign name="google" size={24} color="black" />
+        <AntDesign name="google" size={24} color="black"/>
         <ButtonText>Login With Google</ButtonText>
       </LoginButton>
 

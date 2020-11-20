@@ -22,7 +22,6 @@ const Pessoas: (props: IPessoasProps) => JSX.Element = (props: IPessoasProps) =>
   useEffect(() => {
     props.fetchStudents(token, selectCourse.id);
   }, []);
-  console.log(students);
   return (
     <>
       <Container>

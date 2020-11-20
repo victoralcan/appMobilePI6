@@ -6,8 +6,6 @@ import { IRootState } from "../../shared/reducers";
 import { fetchCourseWorks } from "../../shared/reducers/courseWork.reducer";
 import { FlatList, StyleSheet, Text } from "react-native";
 
-
-
 const styles = StyleSheet.create({
   item: {
     padding: 10,

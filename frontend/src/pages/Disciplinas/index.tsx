@@ -4,12 +4,12 @@ import { connect } from 'react-redux';
 
 import Header from '../../components/Header'
 import { IRootState } from "../../shared/reducers";
-import { fetchCourses, selectCourse, reset } from '../../shared/reducers/course.reducer';
+import { fetchCourses, reset, selectCourse } from '../../shared/reducers/course.reducer';
 
 import { FlatList, StyleSheet, Text } from 'react-native';
 import { CourseState } from "../../shared/models/course.model";
 
-import { CourseConteiner, CourseSection, CourseName } from './styles';
+import { CourseConteiner, CourseName, CourseSection } from './styles';
 
 const styles = StyleSheet.create({
   item: {
@@ -34,7 +34,7 @@ const Disciplinas: (props: IDisciplinasProps) => JSX.Element = (props: IDiscipli
         <Header/>
         <Main>
           {fetchSuccess ?
-            <FlatList 
+            <FlatList
               data={courses}
               // onEndReached={}
               onEndReachedThreshold={0.1}

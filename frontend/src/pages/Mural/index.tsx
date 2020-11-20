@@ -4,18 +4,10 @@ import { connect } from 'react-redux';
 
 import Header from '../../components/Header'
 import { IRootState } from "../../shared/reducers";
-import { FlatList, StyleSheet, Text } from "react-native";
+import { FlatList } from "react-native";
 import { fetchAnnouncements } from '../../shared/reducers/announcement.reducer';
 
 import { ListItem } from './styles';
-
-const styles = StyleSheet.create({
-  item: {
-    padding: 10,
-    fontSize: 18,
-    height: 44,
-  },
-});
 
 interface IMuralProps extends StateProps, DispatchProps {
 }
@@ -35,7 +27,7 @@ const Mural: (props: IMuralProps) => JSX.Element = (props: IMuralProps) => {
             keyExtractor={announcement => announcement.id}
             renderItem={({ item }) => (
               // <Text style={styles.item}>{item.text}</Text>
-            <ListItem>{item.text}</ListItem>
+              <ListItem>{item.text}</ListItem>
             )}
           />
         </Main>

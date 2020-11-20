@@ -1,6 +1,6 @@
 import React from 'react';
 import { Feather, MaterialIcons } from '@expo/vector-icons';
-import { AppName, Avatar, Button, Container, RightSide, AppNameContainer } from './styles';
+import { AppName, AppNameContainer, Avatar, Button, Container, RightSide } from './styles';
 import { connect } from 'react-redux';
 
 import colors from '../../styles/colors';
