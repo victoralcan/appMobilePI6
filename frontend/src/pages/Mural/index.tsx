@@ -6,8 +6,7 @@ import Header from '../../components/Header'
 import { IRootState } from "../../shared/reducers";
 import { FlatList } from "react-native";
 import { fetchAnnouncements } from '../../shared/reducers/announcement.reducer';
-
-import { ListItem } from './styles';
+import PostagemMural from "../../components/PostagemMural";
 
 interface IMuralProps extends StateProps, DispatchProps {
 }
@@ -27,7 +26,7 @@ const Mural: (props: IMuralProps) => JSX.Element = (props: IMuralProps) => {
             keyExtractor={announcement => announcement.id}
             renderItem={({ item }) => (
               // <Text style={styles.item}>{item.text}</Text>
-              <ListItem>{item.text}</ListItem>
+              <PostagemMural userID={item.creatorUserId} announcement={item}/>
             )}
           />
         </Main>
