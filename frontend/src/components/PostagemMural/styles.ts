@@ -57,4 +57,5 @@ export const AnnouncementText = styled.Text`
 // Materiais anexados
 export const AnnouncementMaterial = styled.TouchableOpacity`
     margin-top: 6px;
+    margin-left: 4px;
 `;

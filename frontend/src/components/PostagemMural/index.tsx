@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { IRootState } from "../../shared/reducers";
-import { StyleSheet, Text } from "react-native";
+import { Text } from "react-native";
 import axios from "axios";
 import { UserProfile } from "../../shared/models/course.model";
 import moment from 'moment';
@@ -19,14 +19,6 @@ import {
 } from "./styles";
 
 import IAnnouncement from "../../shared/models/announcement.model";
-
-const styles = StyleSheet.create({
-  item: {
-    padding: 10,
-    fontSize: 18,
-    height: 44,
-  },
-});
 
 interface IPostagemMuralProps extends StateProps, DispatchProps {
   userID: string;
