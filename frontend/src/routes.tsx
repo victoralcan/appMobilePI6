@@ -11,6 +11,8 @@ import { AntDesign, MaterialCommunityIcons, SimpleLineIcons } from "@expo/vector
 import Mural from "./pages/Mural";
 import Atividades from "./pages/Atividades";
 import Notas from "./pages/Notas";
+
+// Página desativada
 import Pessoas from "./pages/Pessoas";
 
 const { Navigator, Screen } = createBottomTabNavigator();
@@ -93,7 +95,7 @@ const Routes: (props: IRouterProps) => JSX.Element = (props: IRouterProps) => {
           )
         }
       }}/>
-      <Screen name="Pessoas" component={Pessoas} options={{
+      {/* <Screen name="Pessoas" component={Pessoas} options={{
         tabBarIcon: ({ size, focused }) => {
           return (
             <SimpleLineIcons
@@ -103,7 +105,7 @@ const Routes: (props: IRouterProps) => JSX.Element = (props: IRouterProps) => {
             />
           )
         }
-      }}/>
+      }}/> */}
     </Navigator>
   );
   return (

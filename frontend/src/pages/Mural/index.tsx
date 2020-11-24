@@ -25,7 +25,6 @@ const Mural: (props: IMuralProps) => JSX.Element = (props: IMuralProps) => {
             data={announcements}
             keyExtractor={announcement => announcement.id}
             renderItem={({ item }) => (
-              // <Text style={styles.item}>{item.text}</Text>
               <PostagemMural userID={item.creatorUserId} announcement={item}/>
             )}
           />

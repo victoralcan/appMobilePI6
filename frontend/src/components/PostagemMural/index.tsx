@@ -47,6 +47,9 @@ const PostagemMural: (props: IPostagemMuralProps) => JSX.Element = (props: IPost
   const CreationTime = moment(announcement.creationTime).format('DD MMM')
   const UpdatedTime = moment(announcement.updateTime).format('h:mm, DD MMM.')
 
+  // Aqui pega o objeto, agora e pra mapear como ? :/
+  console.log(announcement.materials[0]);
+
   return (
     <>
       <AnnouncementContainer>

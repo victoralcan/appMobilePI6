@@ -31,7 +31,7 @@ const Atividades: (props: IAtividadesProps) => JSX.Element = (props: IAtividades
             data={courseWorks}
             keyExtractor={courseWork => courseWork.id}
             renderItem={({ item }) => (
-              <Text style={styles.item}>{item.description}</Text>
+              <Text style={styles.item}>{item.maxPoints}</Text>
             )}
           />
         </Main>
