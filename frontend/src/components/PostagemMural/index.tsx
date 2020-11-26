@@ -48,8 +48,6 @@ const PostagemMural: (props: IPostagemMuralProps) => JSX.Element = (props: IPost
   const UpdatedTime = moment(announcement.updateTime).format('h:mm, DD MMM.')
 
   // Aqui pega o objeto, agora e pra mapear como ? :/
-  console.log(announcement.materials[0]);
-
   return (
     <>
       <AnnouncementContainer>
@@ -60,7 +58,17 @@ const PostagemMural: (props: IPostagemMuralProps) => JSX.Element = (props: IPost
         </AnnouncementDateContainer>
         <AnnouncementText numberOfLines={3}>{announcement.text}</AnnouncementText>
         <AnnouncementMaterial>
-          <Text>MATERIAIS</Text>
+          {/* {announcement.materials.map((material) => {
+            const materialType = material.keys()[0];
+
+            switch(materialType) {
+              case "Form":
+                url = material.formUrl
+                title = material.titl
+            }
+
+          return <Material title={title} url={url} />;
+          })} */}
         </AnnouncementMaterial>
       </AnnouncementContainer>
     </>
