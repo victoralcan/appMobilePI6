@@ -7,16 +7,16 @@ import { fetchCourseWorks } from "../../shared/reducers/courseWork.reducer";
 import { FlatList } from "react-native";
 
 import {
+  AcitivitiesDueContainer,
   ActivitiesContainer,
   ActivitiesCreationTime,
-  ActivitiesDescription,
-  ActivitiesMaxPoints,
-  ActivitiesTitle,
-  ActivitiesUpdatedTime,
   ActivitiesDateContainer,
+  ActivitiesDescription,
   ActivitiesDueDate,
   ActivitiesDueTime,
-  AcitivitiesDueContainer
+  ActivitiesMaxPoints,
+  ActivitiesTitle,
+  ActivitiesUpdatedTime
 } from './styles';
 
 import moment from 'moment';
@@ -37,7 +37,7 @@ const Atividades: (props: IAtividadesProps) => JSX.Element = (props: IAtividades
   const CreationTime = moment().format('DD MMM')
 
   function getDueData(day, month, year) {
-    
+
   }
 
   return (
@@ -52,13 +52,13 @@ const Atividades: (props: IAtividadesProps) => JSX.Element = (props: IAtividades
               <ActivitiesContainer>
                 <ActivitiesTitle>{item.title}</ActivitiesTitle>
                 <ActivitiesDateContainer>
-                  <ActivitiesCreationTime>{moment(item.creationTime).format('DD MMM')+'.'}</ActivitiesCreationTime>
-                  <ActivitiesUpdatedTime>{'Editado às '+moment(item.updateTime).format('h:mm, DD MMM.')}</ActivitiesUpdatedTime>
+                  <ActivitiesCreationTime>{moment(item.creationTime).format('DD MMM') + '.'}</ActivitiesCreationTime>
+                  <ActivitiesUpdatedTime>{'Editado às ' + moment(item.updateTime).format('h:mm, DD MMM.')}</ActivitiesUpdatedTime>
                 </ActivitiesDateContainer>
-                <ActivitiesMaxPoints>{item.maxPoints+' Pontos'}</ActivitiesMaxPoints>
+                <ActivitiesMaxPoints>{item.maxPoints + ' Pontos'}</ActivitiesMaxPoints>
                 <AcitivitiesDueContainer>
                   <ActivitiesDueDate>{'Data de entrega: ' + item.dueDate?.day + '/' + item.dueDate?.month + '/' + item.dueDate?.year}</ActivitiesDueDate>
-                  <ActivitiesDueTime>{'às ' + item.dueTime?.hours+':'+item.dueTime?.minutes}</ActivitiesDueTime>
+                  <ActivitiesDueTime>{'às ' + item.dueTime?.hours + ':' + item.dueTime?.minutes}</ActivitiesDueTime>
                 </AcitivitiesDueContainer>
                 <ActivitiesDescription>{item.description}</ActivitiesDescription>
               </ActivitiesContainer>

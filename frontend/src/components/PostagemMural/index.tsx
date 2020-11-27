@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { IRootState } from "../../shared/reducers";
-import { Text } from "react-native";
 import axios from "axios";
 import { UserProfile } from "../../shared/models/course.model";
 import moment from 'moment';
 import 'moment/locale/pt-br';
 
 
-import { 
+import {
   AnnouncementContainer,
-  AnnouncementUser,
   AnnouncementCreationTime,
   AnnouncementDateContainer,
   AnnouncementMaterial,
   AnnouncementText,
-  AnnouncementUpdatedTime
+  AnnouncementUpdatedTime,
+  AnnouncementUser
 } from "./styles";
 
 import IAnnouncement from "../../shared/models/announcement.model";
@@ -53,8 +52,8 @@ const PostagemMural: (props: IPostagemMuralProps) => JSX.Element = (props: IPost
       <AnnouncementContainer>
         <AnnouncementUser>{user.name && user.name.fullName}</AnnouncementUser>
         <AnnouncementDateContainer>
-          <AnnouncementCreationTime>{CreationTime+'.'}</AnnouncementCreationTime>
-          <AnnouncementUpdatedTime>{'Editado às '+UpdatedTime}</AnnouncementUpdatedTime>
+          <AnnouncementCreationTime>{CreationTime + '.'}</AnnouncementCreationTime>
+          <AnnouncementUpdatedTime>{'Editado às ' + UpdatedTime}</AnnouncementUpdatedTime>
         </AnnouncementDateContainer>
         <AnnouncementText numberOfLines={3}>{announcement.text}</AnnouncementText>
         <AnnouncementMaterial>
