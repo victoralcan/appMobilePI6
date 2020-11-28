@@ -23,7 +23,7 @@ interface IDisciplinasProps extends StateProps, DispatchProps {
 }
 
 const Disciplinas: (props: IDisciplinasProps) => JSX.Element = (props: IDisciplinasProps) => {
-  const { token, courses, fetchSuccess } = props;
+  const { token, courses, fetchCoursesSuccess } = props;
   useEffect(() => {
     props.reset();
     props.fetchCourses(token, CourseState.ACTIVE);
@@ -33,7 +33,7 @@ const Disciplinas: (props: IDisciplinasProps) => JSX.Element = (props: IDiscipli
       <Container>
         <Header/>
         <Main>
-          {fetchSuccess ?
+          {fetchCoursesSuccess ?
             <FlatList
               data={courses}
               // onEndReached={}
@@ -57,7 +57,7 @@ const Disciplinas: (props: IDisciplinasProps) => JSX.Element = (props: IDiscipli
 const mapStateToProps = (store: IRootState) => ({
   courses: store.courses.courses,
   token: store.authentication.userToken,
-  fetchSuccess: store.courses.fetchSuccess
+  fetchCoursesSuccess: store.courses.fetchCoursesSuccess
 });
 
 const mapDispatchToProps = { fetchCourses, selectCourse, reset };

@@ -10,7 +10,7 @@ export const ACTION_TYPES = {
 const initialState = {
   announcements: [] as ReadonlyArray<IAnnouncement>,
   errorMessage: null,
-  fetchSuccess: false
+  fetchAnnouncementsSuccess: false
 };
 
 export type AnnouncementReducerState = Readonly<typeof initialState>;
@@ -22,19 +22,19 @@ export default (state: AnnouncementReducerState = initialState, action): Announc
     case REQUEST(ACTION_TYPES.FETCH_ANNOUNCEMENTS):
       return {
         ...state,
-        fetchSuccess: false
+        fetchAnnouncementsSuccess: false
       };
     case SUCCESS(ACTION_TYPES.FETCH_ANNOUNCEMENTS):
       return {
         ...state,
         announcements: action.payload.data.announcements,
-        fetchSuccess: true
+        fetchAnnouncementsSuccess: true
       };
     case FAILURE(ACTION_TYPES.FETCH_ANNOUNCEMENTS):
       return {
         ...state,
         errorMessage: action.payload,
-        fetchSuccess: false
+        fetchAnnouncementsSuccess: false
       };
     case ACTION_TYPES.RESET:
       return {

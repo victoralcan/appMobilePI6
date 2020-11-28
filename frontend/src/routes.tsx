@@ -13,7 +13,6 @@ import Atividades from "./pages/Atividades";
 import Notas from "./pages/Notas";
 
 // Página desativada
-import Pessoas from "./pages/Pessoas";
 
 const { Navigator, Screen } = createBottomTabNavigator();
 

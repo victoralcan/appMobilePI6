@@ -12,7 +12,7 @@ interface IMuralProps extends StateProps, DispatchProps {
 }
 
 const Mural: (props: IMuralProps) => JSX.Element = (props: IMuralProps) => {
-  const { token, selectCourse, announcements } = props;
+  const { token, selectCourse, announcements, fetchAnnouncementsSuccess } = props;
   useEffect(() => {
     props.fetchAnnouncements(token, selectCourse.id);
   }, []);
@@ -21,13 +21,14 @@ const Mural: (props: IMuralProps) => JSX.Element = (props: IMuralProps) => {
       <Container>
         <Header/>
         <Main>
+          {fetchAnnouncementsSuccess &&
           <FlatList
-            data={announcements}
-            keyExtractor={announcement => announcement.id}
-            renderItem={({ item }) => (
-              <PostagemMural userID={item.creatorUserId} announcement={item}/>
-            )}
-          />
+                  data={announcements}
+                  keyExtractor={announcement => announcement.id}
+                  renderItem={({ item }) => (
+                    <PostagemMural userID={item.creatorUserId} announcement={item}/>
+                  )}
+          />}
         </Main>
       </Container>
     </>
@@ -37,7 +38,8 @@ const Mural: (props: IMuralProps) => JSX.Element = (props: IMuralProps) => {
 const mapStateToProps = (store: IRootState) => ({
   token: store.authentication.userToken,
   selectCourse: store.courses.selectedCourse,
-  announcements: store.announcement.announcements
+  announcements: store.announcement.announcements,
+  fetchAnnouncementsSuccess: store.announcement.fetchAnnouncementsSuccess
 });
 
 const mapDispatchToProps = { fetchAnnouncements };

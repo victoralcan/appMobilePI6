@@ -16,7 +16,8 @@ const initialState = {
   students: [] as ReadonlyArray<Student>,
   userInfo: {} as UserProfile,
   errorMessage: null,
-  fetchSuccess: false
+  fetchCoursesSuccess: false,
+  fetchStudentsSuccess: false
 };
 
 export type CourseReducerState = Readonly<typeof initialState>;
@@ -28,13 +29,18 @@ export default (state: CourseReducerState = initialState, action): CourseReducer
     case REQUEST(ACTION_TYPES.FETCH_COURSES):
       return {
         ...state,
-        fetchSuccess: false
+        fetchCoursesSuccess: false
+      };
+    case REQUEST(ACTION_TYPES.FETCH_STUDENTS):
+      return {
+        ...state,
+        fetchStudentsSuccess: false
       };
     case SUCCESS(ACTION_TYPES.FETCH_COURSES):
       return {
         ...state,
         courses: action.payload.data.courses,
-        fetchSuccess: true
+        fetchCoursesSuccess: true
       };
     case SUCCESS(ACTION_TYPES.USER_INFO):
       return {
@@ -44,13 +50,20 @@ export default (state: CourseReducerState = initialState, action): CourseReducer
     case SUCCESS(ACTION_TYPES.FETCH_STUDENTS):
       return {
         ...state,
-        students: action.payload.data.students
+        students: action.payload.data.students,
+        fetchStudentsSuccess: true
+      };
+    case FAILURE(ACTION_TYPES.FETCH_STUDENTS):
+      return {
+        ...state,
+        errorMessage: action.payload,
+        fetchStudentsSuccess: false
       };
     case FAILURE(ACTION_TYPES.FETCH_COURSES):
       return {
         ...state,
         errorMessage: action.payload,
-        fetchSuccess: false
+        fetchCoursesSuccess: false
       };
     case ACTION_TYPES.SELECT_COURSE:
       return {

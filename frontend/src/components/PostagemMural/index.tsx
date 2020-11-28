@@ -18,6 +18,7 @@ import {
 } from "./styles";
 
 import IAnnouncement from "../../shared/models/announcement.model";
+import IStudentSubmission from "../../shared/models/studentSubmission.model";
 
 interface IPostagemMuralProps extends StateProps, DispatchProps {
   userID: string;

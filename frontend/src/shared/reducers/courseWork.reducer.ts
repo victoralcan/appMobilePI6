@@ -10,7 +10,7 @@ export const ACTION_TYPES = {
 const initialState = {
   courseWorks: [] as ReadonlyArray<ICourseWork>,
   errorMessage: null,
-  fetchSuccess: false
+  fetchCourseWorksSuccess: false
 };
 
 export type CourseWorkReducerState = Readonly<typeof initialState>;
@@ -22,19 +22,19 @@ export default (state: CourseWorkReducerState = initialState, action): CourseWor
     case REQUEST(ACTION_TYPES.FETCH_COURSE_WORKS):
       return {
         ...state,
-        fetchSuccess: false
+        fetchCourseWorksSuccess: false
       };
     case SUCCESS(ACTION_TYPES.FETCH_COURSE_WORKS):
       return {
         ...state,
         courseWorks: action.payload.data.courseWork,
-        fetchSuccess: true
+        fetchCourseWorksSuccess: true
       };
     case FAILURE(ACTION_TYPES.FETCH_COURSE_WORKS):
       return {
         ...state,
         errorMessage: action.payload,
-        fetchSuccess: false
+        fetchCourseWorksSuccess: false
       };
     case ACTION_TYPES.RESET:
       return {
