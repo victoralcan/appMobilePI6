@@ -1,9 +1,7 @@
 import styled from 'styled-components/native';
 import colors from '../../styles/colors';
 
-export const ActivitiesContainer = styled.View`
-    flex: 1;
-    
+export const ActivitiesContainer = styled.View`   
     padding: 8px 0 24px;
 
     margin: 10px 6px 6px 6px;

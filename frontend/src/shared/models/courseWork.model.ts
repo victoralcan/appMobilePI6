@@ -14,7 +14,7 @@ export default interface ICourseWork {
   dueDate?: Date,
   dueTime?: TimeOfDay,
   scheduledTime?: string,
-  maxPoints: number,
+  maxPoints?: number,
   workType: CourseWorkType,
   associatedWithDeveloper: boolean,
   assigneeMode: AssigneeMode,

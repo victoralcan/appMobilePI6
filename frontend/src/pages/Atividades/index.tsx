@@ -55,7 +55,7 @@ const Atividades: (props: IAtividadesProps) => JSX.Element = (props: IAtividades
                   <ActivitiesCreationTime>{moment(item.creationTime).format('DD MMM') + '.'}</ActivitiesCreationTime>
                   <ActivitiesUpdatedTime>{'Editado às ' + moment(item.updateTime).format('h:mm, DD MMM.')}</ActivitiesUpdatedTime>
                 </ActivitiesDateContainer>
-                <ActivitiesMaxPoints>{item.maxPoints + ' Pontos'}</ActivitiesMaxPoints>
+                {item.maxPoints && <ActivitiesMaxPoints>{item.maxPoints + ' Pontos'}</ActivitiesMaxPoints>}
                 <AcitivitiesDueContainer>
                   <ActivitiesDueDate>{'Data de entrega: ' + item.dueDate?.day + '/' + item.dueDate?.month + '/' + item.dueDate?.year}</ActivitiesDueDate>
                   <ActivitiesDueTime>{'às ' + item.dueTime?.hours + ':' + item.dueTime?.minutes}</ActivitiesDueTime>
