@@ -40,7 +40,6 @@ const Atividades: (props: IAtividadesProps) => JSX.Element = (props: IAtividades
   function getDueData(day, month, year) {
 
   }
-// `https://classroom.googleapis.com/v1/courses/${courseId}/courseWork/${courseWorkId}/studentSubmissions`
   return (
     <>
       <Container>
