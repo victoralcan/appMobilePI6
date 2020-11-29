@@ -32,10 +32,12 @@ const PostagemNota: (props: IPostagemNotaProps) => JSX.Element = (props: IPostag
 
   return (
     <>
-      {fetchSuccess &&
+      {fetchSuccess && studentSubmission[studentSubmission.length - 1] &&
       <View>
           <Text>{courseWork.title}</Text>
-          <Text>Pontos: {studentSubmission.length > 0 ? studentSubmission.pop().assignedGrade : 0} / {courseWork.maxPoints}</Text>
+          <Text>Pontos: {studentSubmission.length > 0 ?
+            studentSubmission[studentSubmission.length - 1].assignedGrade ?
+              studentSubmission[studentSubmission.length - 1].assignedGrade : 0 : 0} / {courseWork.maxPoints}</Text>
       </View>}
     </>
   );
