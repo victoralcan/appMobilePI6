@@ -4,8 +4,6 @@ import colors from '../../styles/colors';
 
 // Conteirner da publicação
 export const AnnouncementContainer = styled.View`
-    flex: 1;
-    
     padding: 8px 0;
 
     margin: 10px 6px 6px 6px;

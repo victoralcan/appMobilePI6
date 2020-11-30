@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import Header from '../../components/Header'
 import { IRootState } from "../../shared/reducers";
 import { FlatList } from "react-native";
-import { fetchAnnouncements } from '../../shared/reducers/announcement.reducer';
+import { fetchAnnouncements, reset } from '../../shared/reducers/announcement.reducer';
 import PostagemMural from "../../components/PostagemMural";
 
 interface IMuralProps extends StateProps, DispatchProps {
@@ -14,6 +14,7 @@ interface IMuralProps extends StateProps, DispatchProps {
 const Mural: (props: IMuralProps) => JSX.Element = (props: IMuralProps) => {
   const { token, selectCourse, announcements, fetchAnnouncementsSuccess } = props;
   useEffect(() => {
+    props.reset();
     props.fetchAnnouncements(token, selectCourse.id);
   }, []);
   return (
@@ -42,7 +43,7 @@ const mapStateToProps = (store: IRootState) => ({
   fetchAnnouncementsSuccess: store.announcement.fetchAnnouncementsSuccess
 });
 
-const mapDispatchToProps = { fetchAnnouncements };
+const mapDispatchToProps = { fetchAnnouncements, reset };
 
 type StateProps = ReturnType<typeof mapStateToProps>;
 type DispatchProps = typeof mapDispatchToProps;

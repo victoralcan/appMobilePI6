@@ -2,8 +2,6 @@ import styled from 'styled-components/native';
 import colors from '../../styles/colors';
 
 export const CourseConteiner = styled.TouchableOpacity`
-    flex: 1;
-    
     padding: 8px 0 24px;
 
     margin: 10px 6px 5px 6px;

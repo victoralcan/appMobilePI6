@@ -5,16 +5,8 @@ import axios from "axios";
 import 'moment/locale/pt-br';
 import ICourseWork from "../../shared/models/courseWork.model";
 import IStudentSubmission from "../../shared/models/studentSubmission.model";
-import { Text, View } from "react-native";
 
-import {
-  NotaContainer,
-  NotaDateContainer,
-  NotaCreationTime,
-  NotaUpdatedTime,
-  NotaTitle,
-  NotaPoints
-} from './styles';
+import { NotaContainer, NotaPoints, NotaTitle } from './styles';
 
 interface IPostagemNotaProps extends StateProps, DispatchProps {
   courseWork: ICourseWork
