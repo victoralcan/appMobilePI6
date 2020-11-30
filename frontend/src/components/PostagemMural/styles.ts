@@ -6,7 +6,7 @@ import colors from '../../styles/colors';
 export const AnnouncementContainer = styled.View`
     flex: 1;
     
-    padding: 8px 0 24px;
+    padding: 8px 0;
 
     margin: 10px 6px 6px 6px;
 

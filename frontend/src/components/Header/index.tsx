@@ -12,8 +12,6 @@ interface IHeaderProps extends StateProps, DispatchProps {
 const Header: (props: IHeaderProps) => JSX.Element = (props: IHeaderProps) => {
   return (
     <Container>
-      <Avatar>
-      </Avatar>
       <AppNameContainer>
         <AppName>Nossa EAD</AppName>
       </AppNameContainer>

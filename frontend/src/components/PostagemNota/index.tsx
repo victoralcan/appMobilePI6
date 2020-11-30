@@ -7,6 +7,15 @@ import ICourseWork from "../../shared/models/courseWork.model";
 import IStudentSubmission from "../../shared/models/studentSubmission.model";
 import { Text, View } from "react-native";
 
+import {
+  NotaContainer,
+  NotaDateContainer,
+  NotaCreationTime,
+  NotaUpdatedTime,
+  NotaTitle,
+  NotaPoints
+} from './styles';
+
 interface IPostagemNotaProps extends StateProps, DispatchProps {
   courseWork: ICourseWork
 }
@@ -33,12 +42,12 @@ const PostagemNota: (props: IPostagemNotaProps) => JSX.Element = (props: IPostag
   return (
     <>
       {fetchSuccess && studentSubmission[studentSubmission.length - 1] &&
-      <View>
-          <Text>{courseWork.title}</Text>
-          <Text>Pontos: {studentSubmission.length > 0 ?
+      <NotaContainer>
+          <NotaTitle numberOfLines={1}>{courseWork.title}</NotaTitle>
+          <NotaPoints >Pontos: {studentSubmission.length > 0 ?
             studentSubmission[studentSubmission.length - 1].assignedGrade ?
-              studentSubmission[studentSubmission.length - 1].assignedGrade : 0 : 0} / {courseWork.maxPoints}</Text>
-      </View>}
+              studentSubmission[studentSubmission.length - 1].assignedGrade : 0 : 0} / {courseWork.maxPoints}</NotaPoints>
+      </NotaContainer>}
     </>
   );
 };

@@ -51,7 +51,7 @@ const Atividades: (props: IAtividadesProps) => JSX.Element = (props: IAtividades
                   keyExtractor={courseWork => courseWork.id}
                   renderItem={({ item }) => (
                     <ActivitiesContainer>
-                      <ActivitiesTitle>{item.title}</ActivitiesTitle>
+                      <ActivitiesTitle numberOfLines={1}>{item.title}</ActivitiesTitle>
                       <ActivitiesDateContainer>
                         <ActivitiesCreationTime>{moment(item.creationTime).format('DD MMM') + '.'}</ActivitiesCreationTime>
                         <ActivitiesUpdatedTime>{'Editado às ' + moment(item.updateTime).format('h:mm, DD MMM.')}</ActivitiesUpdatedTime>
@@ -61,7 +61,7 @@ const Atividades: (props: IAtividadesProps) => JSX.Element = (props: IAtividades
                         <ActivitiesDueDate>{'Data de entrega: ' + item.dueDate?.day + '/' + item.dueDate?.month + '/' + item.dueDate?.year}</ActivitiesDueDate>
                         <ActivitiesDueTime>{'às ' + item.dueTime?.hours + ':' + item.dueTime?.minutes}</ActivitiesDueTime>
                       </AcitivitiesDueContainer>
-                      <ActivitiesDescription>{item.description}</ActivitiesDescription>
+                      <ActivitiesDescription>{item.description?.trimEnd()}</ActivitiesDescription>
                     </ActivitiesContainer>
                   )}
           />}
