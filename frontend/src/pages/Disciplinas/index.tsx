@@ -40,7 +40,6 @@ const Disciplinas: (props: IDisciplinasProps) => JSX.Element = (props: IDiscipli
               onEndReachedThreshold={0.1}
               keyExtractor={course => course.id}
               renderItem={({ item }) => (
-                // <Text style={styles.item} onPress={() => props.selectCourse(item)}>{item.name}</Text>
                 <CourseConteiner onPress={() => props.selectCourse(item)}>
                   <CourseName numberOfLines={1}>{item.name}</CourseName>
                   <CourseSection numberOfLines={1}>{item.section}</CourseSection>

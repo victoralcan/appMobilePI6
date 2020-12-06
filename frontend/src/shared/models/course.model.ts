@@ -34,8 +34,8 @@ export interface CourseMaterialSet {
 }
 
 export interface CourseMaterial {
-  driveFile: DriveFile,
-  youTubeVideo: YouTubeVideo,
+  driveFile: {driveFile: DriveFile},
+  youtubeVideo: YouTubeVideo,
   link: ILink,
   form: Form
 }

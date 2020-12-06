@@ -54,6 +54,14 @@ export const AnnouncementText = styled.Text`
 
 // Materiais anexados
 export const AnnouncementMaterial = styled.TouchableOpacity`
-    margin-top: 6px;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 8px;
     margin-left: 4px;
+`;
+
+export const AnnouncementMaterialText = styled.Text`
+    font-weight: bold;
+    margin-left: 4px;
+    margin-right: 24px
 `;

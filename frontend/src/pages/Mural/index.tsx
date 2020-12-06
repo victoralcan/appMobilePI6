@@ -17,6 +17,7 @@ const Mural: (props: IMuralProps) => JSX.Element = (props: IMuralProps) => {
     props.reset();
     props.fetchAnnouncements(token, selectCourse.id);
   }, []);
+
   return (
     <>
       <Container>
