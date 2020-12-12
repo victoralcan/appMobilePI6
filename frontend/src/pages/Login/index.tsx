@@ -15,7 +15,8 @@ const Login: (props: ILoginProps) => JSX.Element = (props: ILoginProps) => {
     scopes: ["https://www.googleapis.com/auth/classroom.courses",
       "https://www.googleapis.com/auth/classroom.coursework.me",
       "https://www.googleapis.com/auth/classroom.announcements",
-      "https://www.googleapis.com/auth/classroom.rosters.readonly"]
+      "https://www.googleapis.com/auth/classroom.rosters.readonly"],
+    androidStandaloneAppClientId: '802976640146-0mq7plli71r0ov7udm1uj5q7k2e1rudq.apps.googleusercontent.com'
   };
   const loginUser = async () => {
     // @ts-ignore

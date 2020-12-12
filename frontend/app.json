@@ -1,12 +1,22 @@
 {
-  "name": "nossa-ead-frontend",
-  "displayName": "nossa-ead-frontend",
+  "name": "Nossa EAD",
+  "displayName": "Nossa EAD",
   "expo": {
-    "name": "nossa-ead-frontend",
-    "slug": "nossa-ead-frontend",
+    "name": "Nossa EAD",
+    "slug": "NossaEAD",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "android": {
+      "package": "com.nossaeadfrontend.nossaead",
+      "versionCode": 1,
+      "config": {
+        "googleSignIn": {
+          "apiKey": "AIzaSyCi-omuN4i8PhCbiqqHy1uUVHYELAUGma0",
+          "certificateHash": "2AC4706F2B0A38CF05B5EA9FA80C99DDA810CB08"
+        }
+      }
+    }
   }
 }
